@@ -1,4 +1,4 @@
-# TERMINALS DOTFILES
+# TERMINAL DOTFILES
 
 ### Repo pra guardar minhas configs de terminais.
 
