@@ -30,7 +30,7 @@ config.inactive_pane_hsb = {
   brightness = 0.06,
 }
 config.window_background_opacity = 1
-config.font_size = 9.0
+config.font_size = 12.0
 --
 config.use_fancy_tab_bar = false
 config.status_update_interval = 1000
@@ -99,20 +99,48 @@ wezterm.on("update-status", function(window, pane)
 end)
 
 
+-- mostrar barra superior
+
+local show_bar = false
+
+wezterm.on("toggle-tab-bar", function(window)
+  show_bar = not show_bar
+  window:set_config_overrides({
+    enable_tab_bar = show_bar,
+    window_decorations = show_bar and "TITLE | RESIZE" or "RESIZE",
+  })
+end)
+
+
+
+
+
+-- padding
+
+
+
+config.window_padding = {
+  left = 0,
+  right = 0,
+  top = 0,
+  bottom = 0,
+}
+
+
+
 
 
 --#89b4fa
 --#1e1e2e
 
 
-
---background (falhando)
+-- background
 
 config.color_scheme = "deep"
 config.colors = {
-	foreground = "gold",
+	foreground = "#ffff00",
   tab_bar = {
-    background = "#00002e",
+    background = "#00004e",
     active_tab = {
       bg_color = "#00b4fa",
       fg_color = "#00002e",
@@ -173,13 +201,13 @@ config.colors = {
 -- local rnd_bg = bgs[math.random(#bgs)]
 --
 --
--- config.window_background_image = "C:\\Path\\Para\\Bgs\\" .. rnd_bg .. ".jpg"
+-- config.window_background_image = "C:\\Users\\*User\\wezterm\\wezarkbg\\" .. rnd_bg .. ".jpg"
 -- config.window_background_image_hsb = {
 -- 	brightness = 0.04,
 -- 	hue = 1.0,
 -- 	saturation = 0.9,
 -- }
-
+--
 --keybidings
 
 
@@ -241,6 +269,11 @@ config.keys = {
     mods = "ALT",
     action = wezterm.action.AdjustPaneSize({"Down", 5}),
 
+  },
+  {
+    key = "b",
+    mods = "ALT",
+    action = wezterm.action.EmitEvent("toggle-tab-bar"),
   },
 
 }
