@@ -8,11 +8,10 @@ end
 --configurações
 config.audible_bell = "Disabled"
 config.window_decorations = "RESIZE"
-config.default_prog = {  'wsl.exe', '-d', 'Arch', 'zsh'}
-config.enable_wayland = false
+config.default_prog = { "pwsh.exe" }
 
 
-local home = "C:/Users/*User"
+local home = "C:/Users/mmarc"
 
 
 config.launch_menu = {
@@ -168,46 +167,46 @@ config.colors = {
 
 
 
--- math.randomseed(os.time())
--- local bgs = {
---   "arkn",
---   "arkn1",
---   "arkn2",
---   "arkn3",
---   "arkn4",
---   "arkn5",
---   "arkn6",
---   "arkn7",
---   "arkn8",
---   "arkn9",
---   "arkn10",
---   "arkn11",
---   "arkn12",
---   "arkn13",
---   "arkn14",
---   "arkn15",
---   "arkn16",
---   "arkn17",
---   "arkn18",
---   "arkn19",
---   "arkn20",
---   "arkn21",
---   "arkn22",
---   "arkn23",
---   "arkn24",
---   "arkn25",
--- }
---
--- local rnd_bg = bgs[math.random(#bgs)]
---
---
--- config.window_background_image = "C:\\Users\\*User\\wezterm\\wezarkbg\\" .. rnd_bg .. ".jpg"
--- config.window_background_image_hsb = {
--- 	brightness = 0.04,
--- 	hue = 1.0,
--- 	saturation = 0.9,
--- }
---
+math.randomseed(os.time())
+local bgs = {
+  "arkn",
+  "arkn1",
+  "arkn2",
+  "arkn3",
+  "arkn4",
+  "arkn5",
+  "arkn6",
+  "arkn7",
+  "arkn8",
+  "arkn9",
+  "arkn10",
+  "arkn11",
+  "arkn12",
+  "arkn13",
+  "arkn14",
+  "arkn15",
+  "arkn16",
+  "arkn17",
+  "arkn18",
+  "arkn19",
+  "arkn20",
+  "arkn21",
+  "arkn22",
+  "arkn23",
+  "arkn24",
+  "arkn25",
+}
+
+local rnd_bg = bgs[math.random(#bgs)]
+
+
+config.window_background_image = "C:\\Users\\mmarc\\wezterm\\wezarkbg\\" .. rnd_bg .. ".jpg"
+config.window_background_image_hsb = {
+	brightness = 0.04,
+	hue = 1.0,
+	saturation = 0.9,
+}
+
 --keybidings
 
 
